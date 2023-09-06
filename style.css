@@ -29,3 +29,31 @@ main {
 h1 {
   padding: 30px;
 }
+
+a {
+  color: greenyellow;
+}
+
+a:hover {
+  background-color: dodgerblue;
+}
+
+a:active {
+  background-color: crimson;
+}
+
+a + a {
+  margin-left: 40px;
+}
+
+article + article {
+  margin-top: 40px;
+}
+
+main > article {
+  border-top: 4px dotted darkolivegreen;
+}
+
+article:first-child {
+  border: none;
+}
