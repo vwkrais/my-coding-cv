@@ -16,7 +16,6 @@ h6 {
   font-family: "Oswald", sans-serif;
 }
 
-header,
 main {
   padding: 16px;
 }
@@ -46,6 +45,11 @@ a + a {
   margin-left: 40px;
 }
 
+::selection {
+  background-color: burlywood;
+  color: cadetblue;
+}
+
 article + article {
   margin-top: 40px;
 }
@@ -56,4 +60,12 @@ main > article {
 
 article:first-child {
   border: none;
+}
+
+main {
+  border: pink solid px=4;
+}
+
+#main-header h2::after {
+  content: " 💻 🔥";
 }
