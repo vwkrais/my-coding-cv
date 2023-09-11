@@ -8,6 +8,11 @@ html {
   font-family: "Kanit", sans-serif;
 }
 
+::selection {
+  background-color: burlywood;
+  color: cadetblue;
+}
+
 h1,
 h2,
 h3,
@@ -24,6 +29,10 @@ main {
 .main-header {
   text-align: center;
   background-color: darkorange;
+}
+
+.main-header h2::after {
+  content: " 💻 🔥";
 }
 
 h1 {
@@ -46,10 +55,6 @@ a + a {
   margin-left: 40px;
 }
 
-::selection {
-  background-color: burlywood;
-  color: cadetblue;
-}
 
 article + article {
   margin-top: 40px;
@@ -63,10 +68,19 @@ article:first-child {
   border: none;
 }
 
-main {
-  border: pink solid px=4;
+
+.experience-header {
+  display: inline-block;
+}  
+
+h3 + p {
+  display: inline-block;
 }
 
-#main-header h2::after {
-  content: " 💻 🔥";
+_h3.experience-header {
+  margin-right 10px; 
+}
+
+.main {
+  border: px=5 solid pink;
 }
