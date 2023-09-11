@@ -7,6 +7,7 @@
     <meta name="author" content="Volker Krais">
     <meta name="describtion" content="about my coding career">
     <title>My-coding-CV</title>
+    <link rel="stylesheet" href="https://unpkg.com/normalize.css@8.0.1/normalize.css" />
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,16 +15,18 @@
 </head>
 
 <body>
-    <header id="main-header">
+    <header class="main-header">
         <h1>Coding CV Volker Krais</h1>
         <h2>Up-coming Web-Developer</h2>
         <!---The sub header should state what your are (job, profession, future profession) --->
-        <a href="#profile">Profile</a>
-        <a href="#experiences">Experiences</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
+        <nav>
+            <a class="nav" href="#profile">Profile</a>
+            <a class="nav" href="#experiences">Experiences</a>
+            <a class="nav" href="#skills">Skills</a>
+            <a class="nav" href="#contact">Contact</a>
+        </nav>
     </header>
-    <main>
+    <main class="main">
         <article id="profile">
             <h2>Profile</h2>
             <p>
@@ -109,11 +112,13 @@
         </article>
         <article id="Contact">
             <h2>Contact</h2>
-            <ol>
-                <li><a href="mailto:vwkrais@gmail.com">Email</a></li>
-                <li><a href="mailto: +49176xyxyxy">Mobil</a></li>
-                <li><a href="mailto:https://wa.me/49176xyxyxy">WhatsUp</a></li>
-            </ol>
+            <nav>
+                <ol>
+                    <li><a class="nav" href="mailto:vwkrais@gmail.com">Email</a></li>
+                    <li><a class="nav" href="mailto: +49176xyxyxy">Mobil</a></li>
+                    <li><a class="nav" href="mailto:https://wa.me/49176xyxyxy">WhatsUp</a></li>
+                </ol>
+            </nav>
         </article>
     </main>
 </body>

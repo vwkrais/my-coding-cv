@@ -1,8 +1,9 @@
 * {
   box-sizing: border-box;
+  font-family: inherit;
 }
 
-body {
+html {
   margin: 0px;
   font-family: "Kanit", sans-serif;
 }
@@ -20,7 +21,7 @@ main {
   padding: 16px;
 }
 
-#main-header {
+.main-header {
   text-align: center;
   background-color: darkorange;
 }
@@ -29,15 +30,15 @@ h1 {
   padding: 30px;
 }
 
-a {
+.nav {
   color: greenyellow;
 }
 
-a:hover {
+.nav:hover {
   background-color: dodgerblue;
 }
 
-a:active {
+.nav:active {
   background-color: crimson;
 }
 
