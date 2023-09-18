@@ -11,9 +11,23 @@ html {
   font-size: 16px;
 }
 
+body {
+  --main-color: darkorange;
+  --secondary-main-color: salmon;
+  --link-color: chartreuse;
+  --hover-color: dodgerblue;
+  --active-color: crimson;
+}
+
 ::selection {
   background-color: burlywood;
   color: cadetblue;
+}
+
+@media print {
+  aside {
+    display: none;
+  }
 }
 
 /* breakpoints for medium and bigger screens */
@@ -27,6 +41,9 @@ html {
 @media screen and (min-width: 992px) {
   html {
     font-size: 24px;
+    .aside {
+      position: fixed;
+    }
   }
 }
 
@@ -39,24 +56,75 @@ h6 {
   font-family: "Oswald", sans-serif;
 }
 
+ul,
+ol {
+  margin-left: 2rem;
+}
+
+li {
+  margin-bottom: 0.2rem;
+}
+
 main {
-  padding: 1rem;
+  /*padding: 1rem;*/
   margin-left: 1rem;
   max-width: 100ch;
 }
 
 .main-header {
   text-align: center;
-  background-color: darkorange;
-  background-image: linear-gradient(darkorange, salmon);
+  background-image: linear-gradient(
+    var(--main-color),
+    var(--secondary-main-color)
+  );
   font-size: 1rem;
   padding: 1em;
 }
 
-nav {
+.main-header:hover .aside {
+  background-color: hotpink;
+  transform: scale(0.5);
+  transform-origin: 50% 50%;
+  transition: 1s;
+  -webkit-transition: width 0.1s; /* Safari and Chrome */
+  -moz-transition: scale 1s; /* Firefox 4 */
+}
+
+.flex-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .flex-container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .grid-main-article {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    /*background-color: lightsalmon;*/
+    grid-template-areas:
+      "header header"
+      "blank article"
+      /*"header header"
+      "blank article"
+      "header header"
+      "blank article"
+      "header header"
+      "blank article"*/;
+  }
+}
+
+.grid-header {
+  grid-area: header;
+}
+
+.grid-article {
+  grid-area: article;
 }
 
 .main-headline {
@@ -80,37 +148,26 @@ nav {
   top: 0;
   right: 0;
   border: 0.25rem solid;
-  background-color: chartreuse;
-}
-
-@media screen and (min-width: 786px) {
-  nav {
-    flex-direction: row;
-    justify-content: center;
-    gap: 20px;
-}
-
-@media screen and (min-width: 992px) {
-  .aside {
-    position: fixed;
-}
-
-@media print {
-  aside {
-    display: none;
-  }
+  background-color: var(--link-color);
 }
 
 .nav {
-  color: greenyellow;
+  color: var(--link-color);
+  transition: 700ms ease;
+  border-radius: 0.2rem;
+  padding: 0.1rem;
 }
 
 .nav:hover {
-  background-color: dodgerblue;
+  background-color: var(--hover-color);
 }
 
 .nav:active {
-  background-color: crimson;
+  background-color: var(--active-color);
+}
+
+.nav:focus-visible {
+  border: 2px dotted darkolivegreen;
 }
 
 article + article {
@@ -125,15 +182,15 @@ article:first-child {
   border: none;
 }
 
-@media screen and (min-width: 786px){
+@media screen and (min-width: 786px) {
   .experience-header {
-  display: inline-block;
+    display: inline-block;
   }
 }
 
-@media screen and (min-width: 786px){
+@media screen and (min-width: 786px) {
   h3 + p {
-  display: inline-block;
+    display: inline-block;
   }
 }
 
@@ -147,5 +204,22 @@ h3.experience-header {
 }
 
 .footer {
-  background-image: linear-gradient(to bottom right, darkorange, salmon);
+  text-align: center;
+  padding: 2rem;
+  background-image: linear-gradient(
+    to right bottom,
+    var(--main-color),
+    var(--secondary-main-color)
+  );
+  _border: 2px solid red;
+}
+
+.footer p::after {
+  content: "🤨";
+  font-size: 2rem;
+  margin-left: 0.5rem;
+}
+
+footer p:hover {
+  background-color: var(--hover-color);
 }
